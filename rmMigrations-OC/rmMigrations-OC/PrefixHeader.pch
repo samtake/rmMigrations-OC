@@ -1,0 +1,15 @@
+//
+//  PrefixHeader.pch
+//  rmMigrations-OC
+//
+//  Created by 黄龙山 on 2019/8/22.
+//  Copyright © 2019 黄龙山. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <Realm/Realm.h>
+#import <SDAutoLayout.h>
+
+#endif /* PrefixHeader_pch */
