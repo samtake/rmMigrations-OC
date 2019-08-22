@@ -13,6 +13,8 @@
 #import "ViewController3.h"
 #import "ViewController4.h"
 
+#import "Dog.h"
+
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
@@ -40,9 +42,71 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
+    [self creatrRealmDataBase];
+    
     return YES;
 }
 
+#pragma mark - 创建数据库的配置
+////v0
+//- (void)creatrRealmDataBase{
+//    NSArray *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *path = [docPath objectAtIndex:0];
+//    NSString *filePath = [path stringByAppendingPathComponent:@"wegood_v0.realm"];//添加.realm便于识别
+//    NSLog(@"realm数据库目录 = %@",filePath);
+//
+//    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+//    config.fileURL = [NSURL URLWithString:filePath];
+//    NSLog(@"schemaVersion=%llu",config.schemaVersion);
+//    [RLMRealmConfiguration setDefaultConfiguration:config];
+//}
+
+//v1
+- (void)creatrRealmDataBase{
+    NSArray *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [docPath objectAtIndex:0];
+    
+    //旧数据库地址
+    NSString *filePathOld = [path stringByAppendingPathComponent:@"wegood_v0.realm"];//添加.realm便于识别
+    NSLog(@"filePathOld = %@",filePathOld);
+    NSURL *oldURL = [NSURL URLWithString:filePathOld];
+    
+    
+    //新数据库地址
+    NSString *filePathNew = [path stringByAppendingPathComponent:@"wegood_v1.realm"];
+    NSLog(@"filePathNew = %@",filePathNew);
+    NSURL *newURL = [NSURL URLWithString:filePathNew];
+    
+    [[NSFileManager defaultManager] removeItemAtURL:oldURL error:nil];
+    [[NSFileManager defaultManager] copyItemAtURL:oldURL toURL:newURL error:nil];
+    
+    RLMMigrationBlock migrationBlock = ^(RLMMigration *migration , uint64_t oldSchemaVersion) {
+        // 这里是设置数据迁移的block
+        if (oldSchemaVersion == 1) {
+            /*if(currentVersion==1.0){*/
+            NSLog(@"migrations");
+            [migration enumerateObjects:Dog.className block:^(RLMObject *oldObject, RLMObject *newObject) {
+                [newObject[@"oneWorld"] addObject:@"数据迁移的默认值"];
+            }];
+        }
+    };
+    
+    
+    RLMRealmConfiguration *configuration = [RLMRealmConfiguration defaultConfiguration];
+    configuration.schemaVersion = 1;
+    configuration.migrationBlock = migrationBlock;
+    [RLMRealmConfiguration setDefaultConfiguration:configuration];
+    [RLMRealm defaultRealm];
+    
+    
+    // set schemave versions and migration blocks form Realms at each path
+    RLMRealmConfiguration *realmv1Configuration = [configuration copy];
+    realmv1Configuration.fileURL = newURL;
+    
+    
+    // manully migration v1Path, v2Path is migrated implicitly on access
+    [RLMRealm performMigrationForConfiguration:realmv1Configuration error:nil];
+}
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     NSLog(@"did select");

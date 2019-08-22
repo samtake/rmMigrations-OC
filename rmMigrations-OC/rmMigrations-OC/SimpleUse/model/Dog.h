@@ -11,6 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Dog : RLMObject
+////v0
+//@property NSString *name;
+//@property NSInteger age;
+//v1
+@property NSString *oneWorld;
 @property NSString *name;
 @property NSInteger age;
 @end

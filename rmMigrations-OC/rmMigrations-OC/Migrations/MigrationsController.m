@@ -1,18 +1,18 @@
 //
-//  ViewController2.m
+//  MigrationsController.m
 //  rmMigrations-OC
 //
 //  Created by 黄龙山 on 2019/8/22.
 //  Copyright © 2019 黄龙山. All rights reserved.
 //
 
-#import "ViewController2.h"
+#import "MigrationsController.h"
 
-@interface ViewController2 ()
+@interface MigrationsController ()
 
 @end
 
-@implementation ViewController2
+@implementation MigrationsController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
