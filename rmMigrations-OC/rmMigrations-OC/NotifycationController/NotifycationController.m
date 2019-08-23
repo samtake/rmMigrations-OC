@@ -7,8 +7,12 @@
 //
 
 #import "NotifycationController.h"
+#import "TableViewController.h"
 
-@interface NotifycationController ()
+@interface NotifycationController (){
+    UIButton *btn0;
+    UIButton *btn1;
+}
 
 @end
 
@@ -17,16 +21,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self setupUI];
+}
+-(void)setupUI{
+    btn0 = [UIButton new];
+    [btn0 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    btn0.backgroundColor = [UIColor yellowColor];
+    [btn0 addTarget:self action:@selector(tableView) forControlEvents:UIControlEventTouchUpInside];
+    [btn0 setTitle:@"tableView" forState:UIControlStateNormal];
+    
+    
+    UIView *contentView = self.view;
+    [self.view sd_addSubviews:@[btn0]];
+    
+    btn0.sd_layout
+    .leftSpaceToView(contentView, 10)
+    .rightSpaceToView(contentView, 10)
+    .topSpaceToView(contentView, 200)
+    .heightIs(50);
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)tableView{
+    [self.navigationController pushViewController:[TableViewController new] animated:true];
 }
-*/
 
 @end

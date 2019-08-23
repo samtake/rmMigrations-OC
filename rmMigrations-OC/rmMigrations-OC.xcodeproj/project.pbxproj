@@ -26,6 +26,8 @@
 		BE27292A230D37E200DCB555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE272929230D37E200DCB555 /* Assets.xcassets */; };
 		BE27292D230D37E200DCB555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE27292B230D37E200DCB555 /* LaunchScreen.storyboard */; };
 		BE272930230D37E200DCB555 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE27292F230D37E200DCB555 /* main.m */; };
+		BE94AB83230FF47E00BAF2FE /* TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94AB82230FF47E00BAF2FE /* TableViewModel.m */; };
+		BE94AB87230FF4D600BAF2FE /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94AB86230FF4D600BAF2FE /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,10 @@
 		BE27292C230D37E200DCB555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE27292E230D37E200DCB555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE27292F230D37E200DCB555 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE94AB81230FF47E00BAF2FE /* TableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewModel.h; sourceTree = "<group>"; };
+		BE94AB82230FF47E00BAF2FE /* TableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewModel.m; sourceTree = "<group>"; };
+		BE94AB85230FF4D600BAF2FE /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		BE94AB86230FF4D600BAF2FE /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,7 @@
 			children = (
 				BE23A53B230E486600A427F0 /* NotifycationController.h */,
 				BE23A53C230E486600A427F0 /* NotifycationController.m */,
+				BE94AB84230FF4BB00BAF2FE /* tableView */,
 			);
 			path = NotifycationController;
 			sourceTree = "<group>";
@@ -218,6 +225,17 @@
 				BE27292F230D37E200DCB555 /* main.m */,
 			);
 			path = "rmMigrations-OC";
+			sourceTree = "<group>";
+		};
+		BE94AB84230FF4BB00BAF2FE /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				BE94AB81230FF47E00BAF2FE /* TableViewModel.h */,
+				BE94AB82230FF47E00BAF2FE /* TableViewModel.m */,
+				BE94AB85230FF4D600BAF2FE /* TableViewController.h */,
+				BE94AB86230FF4D600BAF2FE /* TableViewController.m */,
+			);
+			path = tableView;
 			sourceTree = "<group>";
 		};
 		F7D0A6E8EC649ACB36E2B83F /* Pods */ = {
@@ -327,6 +345,7 @@
 			files = (
 				BE23A52A230E2BA500A427F0 /* Dog.m in Sources */,
 				BE23A547230E674D00A427F0 /* ExtensionController.m in Sources */,
+				BE94AB87230FF4D600BAF2FE /* TableViewController.m in Sources */,
 				BE23A515230E267E00A427F0 /* ViewController1.m in Sources */,
 				BE23A52D230E2C0200A427F0 /* Person.m in Sources */,
 				BE23A53D230E486600A427F0 /* NotifycationController.m in Sources */,
@@ -340,6 +359,7 @@
 				BE23A51F230E26B300A427F0 /* ViewController4.m in Sources */,
 				BE23A54A230E675800A427F0 /* EncryptionController.m in Sources */,
 				BE272922230D37DF00DCB555 /* AppDelegate.m in Sources */,
+				BE94AB83230FF47E00BAF2FE /* TableViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,9 +503,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/rmMigrations-OC/PrefixHeader.pch";
 				INFOPLIST_FILE = "rmMigrations-OC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,9 +524,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/rmMigrations-OC/PrefixHeader.pch";
 				INFOPLIST_FILE = "rmMigrations-OC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

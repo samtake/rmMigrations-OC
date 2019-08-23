@@ -12,4 +12,7 @@
 #import <Realm/Realm.h>
 #import <SDAutoLayout.h>
 
+#define kScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define kScreenHeight [[UIScreen mainScreen] bounds].size.height
+
 #endif /* PrefixHeader_pch */
