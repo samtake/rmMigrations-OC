@@ -62,7 +62,7 @@
     btn0.sd_layout
     .leftSpaceToView(contentView, 10)
     .rightSpaceToView(contentView, 10)
-    .topSpaceToView(contentView, 200)
+    .topSpaceToView(contentView, 100)
     .heightIs(50);
     
     btn1.sd_layout

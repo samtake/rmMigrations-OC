@@ -21,17 +21,22 @@
 
 @implementation ViewController2
 
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.tabBarItem.title =  @"其他功能";
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.title = @"其他功能";
     [self configureData];
     [self configureView];
 }
 
 - (void)configureView {
-    
-    
     self.tableView = [UITableView new];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;

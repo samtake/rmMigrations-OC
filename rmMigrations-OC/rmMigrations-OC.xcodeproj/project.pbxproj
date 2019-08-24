@@ -101,6 +101,8 @@
 		BE23A516230E268300A427F0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BE23A517230E269800A427F0 /* ViewController2.h */,
+				BE23A518230E269800A427F0 /* ViewController2.m */,
 				BE23A51A230E26A600A427F0 /* ViewController3.h */,
 				BE23A51B230E26A600A427F0 /* ViewController3.m */,
 				BE23A51D230E26B300A427F0 /* ViewController4.h */,
@@ -143,8 +145,6 @@
 		BE23A52E230E479B00A427F0 /* Backlink */ = {
 			isa = PBXGroup;
 			children = (
-				BE23A517230E269800A427F0 /* ViewController2.h */,
-				BE23A518230E269800A427F0 /* ViewController2.m */,
 				BE23A52F230E47B600A427F0 /* BacklinkController.h */,
 				BE23A530230E47B600A427F0 /* BacklinkController.m */,
 			);
