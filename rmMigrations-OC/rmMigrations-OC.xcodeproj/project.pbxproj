@@ -28,6 +28,7 @@
 		BE272930230D37E200DCB555 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE27292F230D37E200DCB555 /* main.m */; };
 		BE94AB83230FF47E00BAF2FE /* TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94AB82230FF47E00BAF2FE /* TableViewModel.m */; };
 		BE94AB87230FF4D600BAF2FE /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94AB86230FF4D600BAF2FE /* TableViewController.m */; };
+		BE94AB8A2310DA7D00BAF2FE /* ExtensionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94AB892310DA7D00BAF2FE /* ExtensionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,8 @@
 		BE94AB82230FF47E00BAF2FE /* TableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewModel.m; sourceTree = "<group>"; };
 		BE94AB85230FF4D600BAF2FE /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		BE94AB86230FF4D600BAF2FE /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		BE94AB882310DA7C00BAF2FE /* ExtensionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionModel.h; sourceTree = "<group>"; };
+		BE94AB892310DA7D00BAF2FE /* ExtensionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 			children = (
 				BE23A545230E674D00A427F0 /* ExtensionController.h */,
 				BE23A546230E674D00A427F0 /* ExtensionController.m */,
+				BE94AB882310DA7C00BAF2FE /* ExtensionModel.h */,
+				BE94AB892310DA7D00BAF2FE /* ExtensionModel.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				BE23A519230E269800A427F0 /* ViewController2.m in Sources */,
 				BE23A531230E47B600A427F0 /* BacklinkController.m in Sources */,
 				BE272930230D37E200DCB555 /* main.m in Sources */,
+				BE94AB8A2310DA7D00BAF2FE /* ExtensionModel.m in Sources */,
 				BE23A51F230E26B300A427F0 /* ViewController4.m in Sources */,
 				BE23A54A230E675800A427F0 /* EncryptionController.m in Sources */,
 				BE272922230D37DF00DCB555 /* AppDelegate.m in Sources */,
